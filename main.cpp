@@ -29,12 +29,21 @@ int main() {
                   if (m == 1 ){
                       string p ; int k ;
                       cout << "Enter plaintext : " ; cin >> p ;
-                      cout << "Enter Key : " ; cin >> k ;
-                      controller.Set_plaintext(p) ;
-                      controller.Set_caesarkey(k) ;
-                      controller.Caesar_Encryption() ;
-                      cout << "ciphertext is :  " <<controller.Get_cipherText()<< endl  ;
-                  }
+                      cout << "Enter integer Key between (1) and (25) inclusive  : " ; cin >> k ;
+
+                      while(true) {
+                          if (k < 26) {
+                              controller.Set_plaintext(p);
+                              controller.Set_caesarkey(k);
+                              controller.Caesar_Encryption();
+                              cout << "ciphertext is :  " << controller.Get_cipherText() << endl;
+                              break ;
+                          }
+                          else
+                              cout<< "sorry your key is invalid,please Enter integer Key between (1) and (25) inclusive : "; cin >> k ;
+                      }//while
+
+                  } // Encryption (if)
 
                   // 2) Decryption
                   else if (m == 2) {
@@ -44,16 +53,29 @@ int main() {
                       cout << "2) Unknown Key "<<endl ;
                       cout << "__________________________________________________________________________________________________" << endl;
                       int km ; cin >> km ;
+
+
                        // with key
                       if(km == 1 ) {
                           string c ; int k ;
                           cout << "Enter Ciphertext : " ; cin >> c ;
-                          cout << "Enter Key : " ; cin >> k ;
-                          controller.Set_caesarkey(k);
-                          controller.Set_cipherText(c) ;
-                          controller.Caesar_Decryption() ;
-                          cout << "plaintext is :  " <<controller.Get_plainText()<< endl  ;
-                      }
+                          cout << "Enter integer Key between (1) and (25) inclusive  : " ; cin >> k ;
+
+                          while(true) {
+                              if (k < 26) {
+                                  controller.Set_caesarkey(k);
+                                  controller.Set_cipherText(c);
+                                  controller.Caesar_Decryption();
+                                  cout << "plaintext is :  " << controller.Get_plainText() << endl;
+                                  break ;
+                              }
+                              else cout<< "sorry your key is invalid,please Enter integer Key between (1) and (25) inclusive : "; cin >> k ;
+
+                          }// while
+
+                      }// with key (if)
+
+
 
                       // without key
                       else if (km == 2 ) {
@@ -68,6 +90,7 @@ int main() {
                       else
                           cout << "sorry your input is invalid, please try again ! " ;
                   }
+
 
                    //3) Return to previous step
                    else if (m == 3) {}
