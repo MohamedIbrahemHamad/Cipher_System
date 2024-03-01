@@ -2,9 +2,7 @@
 #include "CipherManagement.h"
 using namespace std ;
 
-
 int main() {
-
 
     CipherManagement controller ;
     cout<< "Welcome to our Cipher system,You can encrypt and decrypt using the Caesar and Playfair methods "<<endl ;
@@ -28,8 +26,12 @@ int main() {
                   // 1) Encryption
                   if (m == 1 ){
                       string p ; int k ;
-                      cout << "Enter plaintext : " ; cin >> p ;
-                      cout << "Enter integer Key between (1) and (25) inclusive  : " ; cin >> k ;
+
+                      cout << "Enter plaintext : " ;
+                      cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Clear the input buffer
+                      getline(cin , p) ; // get all line even spaces as plaintext
+
+                      cout << "Enter integer Key between (1) and (25) inclusive  : " ;   cin >> k ;
 
                       while(true) {
                           if (k < 26) {
@@ -54,11 +56,14 @@ int main() {
                       cout << "__________________________________________________________________________________________________" << endl;
                       int km ; cin >> km ;
 
-
                        // with key
                       if(km == 1 ) {
                           string c ; int k ;
-                          cout << "Enter Ciphertext : " ; cin >> c ;
+
+                          cout << "Enter Ciphertext : " ;
+                          cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Clear the input buffer
+                          getline(cin , c) ; // get all line even spaces as Ciphertext
+
                           cout << "Enter integer Key between (1) and (25) inclusive  : " ; cin >> k ;
 
                           while(true) {
@@ -80,7 +85,11 @@ int main() {
                       // without key
                       else if (km == 2 ) {
                           string c ;
-                          cout << "Enter Ciphertext : " ; cin >> c ;
+
+                          cout << "Enter Ciphertext : " ;
+                          cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Clear the input buffer
+                          getline(cin , c) ; // get all line even spaces as Ciphertext
+
                           controller.Set_cipherText(c) ;
                           cout << "These are all possible Keys (25) : "<< endl ;
                           controller.Caesar_Decryption_withoutKey() ;
@@ -155,7 +164,7 @@ int main() {
                 return 0;
             }
 
-                break;
+
 
             default: {
                 cout << "sorry your input is invalid, please try again ! " << endl;

@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std ;
 #include "CipherManagement.h"
-#include "Caesar.h"
-#include "PlayFair.h"
 
 // Setter
 
