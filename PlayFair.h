@@ -7,11 +7,11 @@ class PlayFair {
 private :
     char keyTable[5][5] ;
 
+    void findPosition( char ch, int& row, int& col) ;
+
 public:
 
     void generateKeyTable(string key ) ;
-
-    void findPosition(char keyTable[5][5], char ch, int& row, int& col) ;
 
     string encrypt(string plaintext) ;
 

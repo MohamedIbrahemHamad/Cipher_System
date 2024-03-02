@@ -42,7 +42,7 @@ void PlayFair::generateKeyTable(string key) {
 
 }
 
-void PlayFair::findPosition(char keyTable[5][5], char ch, int& row, int& col) {
+void PlayFair::findPosition( char ch, int& row, int& col) {
     if (ch == 'J')
         ch = 'I';
 
@@ -80,8 +80,8 @@ string PlayFair::encrypt(string plaintext) {
     for (int i = 0; i < plaintext.length(); i += 2)
     {
         int row1, col1, row2, col2;
-        findPosition(keyTable, plaintext[i], row1, col1);
-        findPosition(keyTable, plaintext[i + 1], row2, col2);
+        findPosition( plaintext[i], row1, col1);
+        findPosition( plaintext[i + 1], row2, col2);
 
         if (row1 == row2) {
             ciphertext += keyTable[row1][(col1 + 1) % 5];
@@ -109,8 +109,8 @@ string PlayFair::decrypt(string ciphertext) {
 
     for (int i = 0; i < ciphertext.length(); i += 2) {
         int row1, col1, row2, col2;
-        findPosition(keyTable, ciphertext[i], row1, col1);
-        findPosition(keyTable, ciphertext[i + 1], row2, col2);
+        findPosition( ciphertext[i], row1, col1);
+        findPosition( ciphertext[i + 1], row2, col2);
 
         if (row1 == row2) {
             plaintext += keyTable[row1][(col1 + 4) % 5];

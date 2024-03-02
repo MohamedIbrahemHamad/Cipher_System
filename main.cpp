@@ -5,7 +5,9 @@ using namespace std ;
 int main() {
 
     CipherManagement controller ;
+
     cout<< "Welcome to our Cipher system,You can encrypt and decrypt using the Caesar and Playfair methods "<<endl ;
+
     while (true) {
         cout << "*************************************************************************************************" <<endl ;
         cout << "Please chose mode : " <<endl ;
@@ -176,7 +178,6 @@ int main() {
     }//while
 
     }//main
-
 
 
 

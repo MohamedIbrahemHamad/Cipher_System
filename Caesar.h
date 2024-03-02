@@ -5,13 +5,13 @@
 using namespace std;
 
 class Caesar {
+
 public:
     string Encryption(string &p, int k) ;
 
-    string Decryption(string& c, int k) ;
+    string Decryption(string &c, int k) ;
 
     void Decryption_Without_Key(string c ) ;
-
 
 
 };
