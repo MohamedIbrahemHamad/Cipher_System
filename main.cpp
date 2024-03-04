@@ -10,10 +10,10 @@ int main() {
 
     while (true) {
         cout << "*************************************************************************************************" <<endl ;
-        cout << "Please chose mode : " <<endl ;
+        cout << "Please choose mode : " <<endl ;
         cout << "Enter (1) to use Caesar method , (2) to use Playfair method and (3) to Exit the system . " << endl;
         cout << "__________________________________________________________________________________________________" << endl;
-        int mode; cin >> mode;
+        int mode ; cin >> mode;
         cout << "__________________________________________________________________________________________________" << endl;
         switch (mode) {
 
@@ -76,7 +76,7 @@ int main() {
                                   cout << "plaintext is :  " << controller.Get_plainText() << endl;
                                   break ;
                               }
-                              else cout<< "sorry your key is invalid,please Enter integer Key between (1) and (25) inclusive : "; cin >> k ;
+                              else cout<< "sorry your key is invalid , please Enter integer Key between (1) and (25) inclusive : "; cin >> k ;
 
                           }// while
 
@@ -99,7 +99,7 @@ int main() {
                       }
 
                       else
-                          cout << "sorry your input is invalid, please try again ! " ;
+                          cout << "sorry your input is invalid , please try again ! " ;
                   }
 
 
@@ -162,14 +162,14 @@ int main() {
 
             case 3 : {
 
-                cout << "Thank you for using !"<<endl;
+                cout << "Thank you for using our system !"<<endl;
                 return 0;
             }
 
 
 
             default: {
-                cout << "sorry your input is invalid, please try again ! " << endl;
+                cout << "sorry your input is invalid , please try again ! " << endl;
                 cout << "__________________________________________________________________________________________________"<< endl;
             }
 
